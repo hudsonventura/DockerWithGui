@@ -25,8 +25,8 @@ services:
 
   gui:
     #build: .
-    image: hudsonventura/DockerWithGui:latest
-    #image: hudsonventura/DockerWithGui:latestWithWine
+    image: hudsonventura/dockerwithgui:latest
+    #image: hudsonventura/dockerwithgui:latestwithwine
     restart: always
     ports:
       # port for connect via VNC app
