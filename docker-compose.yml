@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  gui:
+    #build: .
+    image: hudsonventura/DockerWithGui:latest
+    #image: hudsonventura/DockerWithGui:latestWithWine
+    restart: always
+    ports:
+      # port for connect via VNC app
+      - "5901:5901"
+      #port for conect via noNVC (via http browser like http://localhost:6901)
+      - "6901:6901"
+    environment:
+      # the password must be up to 8 charactrers. This is limited by VNC Protocol
+      - "VNC_PW=DWGui"
