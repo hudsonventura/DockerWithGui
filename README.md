@@ -6,11 +6,23 @@ It's based on accetto/ubuntu-vnc-xfce, that you can find on him repository at ht
 
 Inside the container, you can install any graphical app. By the way, you can use the version with Wine to install a Windows application.
 
+It's use XFCE4, a very lightweight graphical interface for linux, and NoVNC, a http server with VNC protocol.
+
+<br>
+
+Screenshots
+------------
+<img src="https://github.com/hudsonventura/DockerWithGui/raw/main/screenshots/screen1.png" height="100%" title="hover text">
+<img src="https://github.com/hudsonventura/DockerWithGui/raw/main/screenshots/screen2.png" height="100%" title="hover text">
+
 <br>
 
 Requirements
 ------------
-A distro Linux, docker, docker-compose, some knowledg about VNC and Wine (if you use the Wine version).
+<li>A distro Linux;
+<li>Docker and Docker Compose
+<li>A browser to access NoVNC via http or a VNC client.
+<li>Some knowledg about VNC and Wine (if you use the Wine version)
 
 <br>
 
@@ -38,6 +50,8 @@ services:
       - "VNC_PW=DWGui"
 ```
 <br>
+
+
 To operate the container
 
 ```bash
@@ -60,14 +74,23 @@ Uncomment #build: . from docker-compose file.
 sudo docker compose --build
 ```
 
-  
+<br>
+
+Inside container ...
+------------------------------------
+``` bash
+apt update
+apt install firefox
+```
+
+<br>
 
 To remember
 -----------
 
 If you want to persist some information, you must use volumes.
 
-When you destroy the container with command sudo docker compose down, all information inside the container also will be destroied.
+When you destroy the container with command sudo docker compose down, all information inside the container also will be destroyed.
 
 <br>
 
@@ -76,7 +99,10 @@ To personalize
 
 If you want to create a image with some apps installed, edit the Dockerfile or create a new Dockerfile and put the image hudsonventura/dockerwithgui:latest or hudsonventura/dockerwithgui:latest_withwine in FROM.
 
+<br>
 
 Documentation
 --------------
 Full documentation is available at https://github.com/hudsonventura/DockerWithGui.
+
+Credits: https://github.com/accetto
